@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());*/
 
 // Import Models and controllers
-var modelo     = require('./modelo')(app, mongoose);
+var modelo = require('./modelo')(app, mongoose);
 var controles = require('./controles');
 
 // Example Route
@@ -41,6 +41,6 @@ pelicula.route('/pelicula/:id')
 app.use('/api', pelicula);
 
 // Start server
-app.listen(8080, function() {
+app.listen(8080, () => {
   console.log("Node server running on http://localhost:8080");
 });
