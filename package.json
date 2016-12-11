@@ -1,0 +1,23 @@
+{
+  "name": "express_mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steevenrubiano/onlyExpressMongoose.git"
+  },
+  "author": "Jonathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steevenrubiano/onlyExpressMongoose/issues"
+  },
+  "homepage": "https://github.com/steevenrubiano/onlyExpressMongoose#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.7.2"
+  }
+}
