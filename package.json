@@ -1,8 +1,8 @@
 {
-  "name": "express_mongoose",
+  "name": "apirest",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "apirest express y mongo",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/steevenrubiano/onlyExpressMongoose.git"
   },
-  "author": "Jonathan",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/steevenrubiano/onlyExpressMongoose/issues"
@@ -18,6 +18,6 @@
   "homepage": "https://github.com/steevenrubiano/onlyExpressMongoose#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "mongoose": "^4.7.2"
+    "mongoose": "^4.7.6"
   }
 }

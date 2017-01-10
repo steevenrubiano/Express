@@ -1,11 +1,11 @@
-var express = require("express");
-var app = express();
-/*var bodyParser = require("body-parser");
-var methodOverride = require("method-override");*/
-var mongoose = require('mongoose');
+var express         = require("express"),
+    app             = express(),
+    /*bodyParser      = require("body-parser"),
+    methodOverride  = require("method-override"),*/
+    mongoose        = require('mongoose');
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/test', (err, res) => {
+mongoose.connect('mongodb://localhost/peliculas', function(err, res) {
   if(err) throw err;
   console.log('Connected to Database');
 });
@@ -16,31 +16,31 @@ app.use(bodyParser.json());
 app.use(methodOverride());*/
 
 // Import Models and controllers
-var modelo = require('./modelo')(app, mongoose);
-var controles = require('./controles');
+var models     = require('./models/pelicula')(app, mongoose);
+var PeliculaCtrl = require('./controllers/peliculas');
 
 // Example Route
 var router = express.Router();
-router.get('/', (req, res) => {
+router.get('/', function(req, res) {
   res.send("Hello world!");
 });
 app.use(router);
 
 // API routes
-var pelicula = express.Router();
+var peliculas = express.Router();
 
-pelicula.route('/pelicula')
-  .get(controles.findAllPeliculas)
-  .post(controles.addPelicula);
+peliculas.route('/peliculas')
+  .get(PeliculaCtrl.findAllPeliculas)
+  .post(PeliculaCtrl.addPelicula);
 
-pelicula.route('/pelicula/:id')
-  .get(controles.findById)
-  .put(controles.updatePelicula)
-  .delete(controles.deletePelicula);
+peliculas.route('/peliculas/:id')
+  .get(PeliculaCtrl.findById)
+  .put(PeliculaCtrl.updatePelicula)
+  .delete(PeliculaCtrl.deletePelicula);
 
-app.use('/api', pelicula);
+app.use('/api', peliculas);
 
 // Start server
-app.listen(8080, () => {
-  console.log("Node server running on http://localhost:8080");
+app.listen(3000, function() {
+  console.log("Node server running on http://localhost:3000");
 });

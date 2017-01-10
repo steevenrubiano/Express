@@ -9,17 +9,13 @@
             "request": "launch",
             "name": "Iniciar programa",
             "program": "${workspaceRoot}\\app.js",
-            "cwd": "${workspaceRoot}",
-            "outFiles": [],
-            "sourceMaps": true
+            "cwd": "${workspaceRoot}"
         },
         {
             "type": "node",
             "request": "attach",
             "name": "Asociar al proceso",
-            "port": 5858,
-            "outFiles": [],
-            "sourceMaps": true
+            "port": 5858
         }
     ]
 }
